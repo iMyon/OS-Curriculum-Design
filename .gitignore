@@ -7,3 +7,4 @@ Release
 *.vcxproj*
 !/vsproject/src/GeneratedFiles/Debug
 !/vsproject/src/GeneratedFiles/Release
+osDesign.zip
