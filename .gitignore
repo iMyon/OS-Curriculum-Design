@@ -1,21 +1,9 @@
-# Compiled Object files
-*.slo
-*.lo
-*.o
-*.obj
-
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
-
-# Executables
-*.exe
-*.out
-*.app
+Win32
+*.sdf
+*.suo
+Debug
+Release
+*.vcxproj
+*.vcxproj*
+!/vsproject/src/GeneratedFiles/Debug
+!/vsproject/src/GeneratedFiles/Release
