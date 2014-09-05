@@ -60,7 +60,7 @@
        <attribute name="title">
         <string>进程(&amp;P)</string>
        </attribute>
-       <widget class="QTableWidget" name="tableWidget_2">
+       <widget class="QTableWidget" name="tableProcess">
         <property name="geometry">
          <rect>
           <x>-1</x>
@@ -101,7 +101,7 @@
        <attribute name="title">
         <string>文件(&amp;F)</string>
        </attribute>
-       <widget class="QTableWidget" name="tableWidget">
+       <widget class="QTableWidget" name="tableFile">
         <property name="geometry">
          <rect>
           <x>-1</x>
@@ -137,9 +137,9 @@
       </widget>
       <widget class="QWidget" name="deadlock">
        <attribute name="title">
-        <string>死锁模拟</string>
+        <string>死锁模拟(&amp;D)</string>
        </attribute>
-       <widget class="QLabel" name="label">
+       <widget class="QLabel" name="LableDeadlock">
         <property name="geometry">
          <rect>
           <x>3</x>
@@ -152,7 +152,7 @@
          <string>进程资源使用情况输出：</string>
         </property>
        </widget>
-       <widget class="QWidget" name="widget" native="true">
+       <widget class="QWidget" name="tableDeadlock" native="true">
         <property name="geometry">
          <rect>
           <x>3</x>
@@ -176,35 +176,35 @@
      <height>23</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menu">
+   <widget class="QMenu" name="menuFile">
     <property name="title">
      <string>文件</string>
     </property>
     <addaction name="actionOpen"/>
    </widget>
-   <widget class="QMenu" name="menu_2">
+   <widget class="QMenu" name="menuHelp">
     <property name="title">
      <string>帮助</string>
     </property>
    </widget>
-   <widget class="QMenu" name="menu_3">
+   <widget class="QMenu" name="menuAbout">
     <property name="title">
      <string>关于</string>
     </property>
-    <addaction name="actionA"/>
-    <addaction name="actionV"/>
+    <addaction name="actionAuthor"/>
+    <addaction name="actionVersion"/>
    </widget>
-   <widget class="QMenu" name="menu_4">
+   <widget class="QMenu" name="menuUser">
     <property name="title">
      <string>用户</string>
     </property>
     <addaction name="actionNew_user"/>
-    <addaction name="actionS"/>
+    <addaction name="actionSwitchUser"/>
    </widget>
-   <addaction name="menu"/>
-   <addaction name="menu_4"/>
-   <addaction name="menu_2"/>
-   <addaction name="menu_3"/>
+   <addaction name="menuFile"/>
+   <addaction name="menuUser"/>
+   <addaction name="menuHelp"/>
+   <addaction name="menuAbout"/>
   </widget>
   <action name="actionOpen">
    <property name="text">
@@ -222,17 +222,17 @@
     <string>新建用户</string>
    </property>
   </action>
-  <action name="actionA">
+  <action name="actionAuthor">
    <property name="text">
     <string>作者(&amp;A)</string>
    </property>
   </action>
-  <action name="actionV">
+  <action name="actionVersion">
    <property name="text">
     <string>版本(&amp;V)</string>
    </property>
   </action>
-  <action name="actionS">
+  <action name="actionSwitchUser">
    <property name="text">
     <string>切换用户(&amp;S)</string>
    </property>
@@ -240,8 +240,8 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
-  <tabstop>tableWidget_2</tabstop>
-  <tabstop>tableWidget</tabstop>
+  <tabstop>tableProcess</tabstop>
+  <tabstop>tableFile</tabstop>
   <tabstop>tabs</tabstop>
  </tabstops>
  <resources>

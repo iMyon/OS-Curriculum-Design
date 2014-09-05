@@ -1,6 +1,7 @@
 Win32
 *.sdf
 *.suo
+*.opensdf
 Debug
 Release
 *.vcxproj
