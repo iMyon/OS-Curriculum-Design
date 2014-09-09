@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <directory owner="0" group="0" type="1" filename="demo_file" permission="777">
+        <file>keyText</file>
+    </directory>
+    <file>demo</file>
+</root>

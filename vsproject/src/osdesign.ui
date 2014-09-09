@@ -54,7 +54,7 @@
        </size>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="process">
        <attribute name="title">
@@ -101,7 +101,7 @@
        <attribute name="title">
         <string>文件(&amp;F)</string>
        </attribute>
-       <widget class="QTableWidget" name="tableFile">
+       <widget class="QTreeWidget" name="treeFile">
         <property name="geometry">
          <rect>
           <x>-1</x>
@@ -110,17 +110,14 @@
           <height>231</height>
          </rect>
         </property>
-        <property name="contextMenuPolicy">
-         <enum>Qt::CustomContextMenu</enum>
-        </property>
         <column>
          <property name="text">
-          <string>名称</string>
+          <string>文件名</string>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>日期</string>
+          <string>创建日期</string>
          </property>
         </column>
         <column>
@@ -133,6 +130,24 @@
           <string>权限</string>
          </property>
         </column>
+        <item>
+         <property name="text">
+          <string>test</string>
+         </property>
+         <property name="icon">
+          <iconset resource="osdesign.qrc">
+           <normaloff>:/osDesign/osdesign.qrc</normaloff>:/osDesign/osdesign.qrc</iconset>
+         </property>
+         <property name="text">
+          <string>2014-9-5</string>
+         </property>
+         <property name="text">
+          <string>1</string>
+         </property>
+         <property name="text">
+          <string>111111101</string>
+         </property>
+        </item>
        </widget>
       </widget>
       <widget class="QWidget" name="deadlock">
@@ -241,7 +256,6 @@
  <layoutdefault spacing="6" margin="11"/>
  <tabstops>
   <tabstop>tableProcess</tabstop>
-  <tabstop>tableFile</tabstop>
   <tabstop>tabs</tabstop>
  </tabstops>
  <resources>

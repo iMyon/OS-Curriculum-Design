@@ -75,6 +75,8 @@ void *osDesign::qt_metacast(const char *_clname)
     if (!_clname) return 0;
     if (!strcmp(_clname, qt_meta_stringdata_osDesign.stringdata))
         return static_cast<void*>(const_cast< osDesign*>(this));
+    if (!strcmp(_clname, "Ui::osDesignClass"))
+        return static_cast< Ui::osDesignClass*>(const_cast< osDesign*>(this));
     return QMainWindow::qt_metacast(_clname);
 }
 

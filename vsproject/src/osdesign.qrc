@@ -1,4 +1,5 @@
 <RCC>
-    <qresource prefix="osDesign">
-    </qresource>
+  <qresource prefix="osDesign">
+    <file>osdesign.qrc</file>
+  </qresource>
 </RCC>

@@ -3,17 +3,17 @@
 
 #include <QtWidgets/QMainWindow>
 #include "ui_osdesign.h"
+#include"func/include/filesystem.h"
 
-class osDesign : public QMainWindow
+class osDesign : public QMainWindow, public Ui::osDesignClass
 {
     Q_OBJECT
 
+private:
+    
 public:
     osDesign(QWidget *parent = 0);
     ~osDesign();
-
-private:
-    Ui::osDesignClass ui;
 };
 
 #endif // OSDESIGN_H

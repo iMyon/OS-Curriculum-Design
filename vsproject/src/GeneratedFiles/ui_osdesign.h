@@ -20,6 +20,7 @@
 #include <QtWidgets/QMenuBar>
 #include <QtWidgets/QTabWidget>
 #include <QtWidgets/QTableWidget>
+#include <QtWidgets/QTreeWidget>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -39,7 +40,7 @@ public:
     QWidget *process;
     QTableWidget *tableProcess;
     QWidget *file;
-    QTableWidget *tableFile;
+    QTreeWidget *treeFile;
     QWidget *deadlock;
     QLabel *LableDeadlock;
     QWidget *tableDeadlock;
@@ -98,20 +99,13 @@ public:
         tabs->addTab(process, QString());
         file = new QWidget();
         file->setObjectName(QStringLiteral("file"));
-        tableFile = new QTableWidget(file);
-        if (tableFile->columnCount() < 4)
-            tableFile->setColumnCount(4);
-        QTableWidgetItem *__qtablewidgetitem4 = new QTableWidgetItem();
-        tableFile->setHorizontalHeaderItem(0, __qtablewidgetitem4);
-        QTableWidgetItem *__qtablewidgetitem5 = new QTableWidgetItem();
-        tableFile->setHorizontalHeaderItem(1, __qtablewidgetitem5);
-        QTableWidgetItem *__qtablewidgetitem6 = new QTableWidgetItem();
-        tableFile->setHorizontalHeaderItem(2, __qtablewidgetitem6);
-        QTableWidgetItem *__qtablewidgetitem7 = new QTableWidgetItem();
-        tableFile->setHorizontalHeaderItem(3, __qtablewidgetitem7);
-        tableFile->setObjectName(QStringLiteral("tableFile"));
-        tableFile->setGeometry(QRect(-1, -1, 521, 231));
-        tableFile->setContextMenuPolicy(Qt::CustomContextMenu);
+        treeFile = new QTreeWidget(file);
+        QIcon icon;
+        icon.addFile(QStringLiteral(":/osDesign/osdesign.qrc"), QSize(), QIcon::Normal, QIcon::Off);
+        QTreeWidgetItem *__qtreewidgetitem = new QTreeWidgetItem(treeFile);
+        __qtreewidgetitem->setIcon(0, icon);
+        treeFile->setObjectName(QStringLiteral("treeFile"));
+        treeFile->setGeometry(QRect(-1, -1, 521, 231));
         tabs->addTab(file, QString());
         deadlock = new QWidget();
         deadlock->setObjectName(QStringLiteral("deadlock"));
@@ -138,8 +132,7 @@ public:
         menuUser = new QMenu(menuBar);
         menuUser->setObjectName(QStringLiteral("menuUser"));
         osDesignClass->setMenuBar(menuBar);
-        QWidget::setTabOrder(tableProcess, tableFile);
-        QWidget::setTabOrder(tableFile, tabs);
+        QWidget::setTabOrder(tableProcess, tabs);
 
         menuBar->addAction(menuFile->menuAction());
         menuBar->addAction(menuUser->menuAction());
@@ -153,7 +146,7 @@ public:
 
         retranslateUi(osDesignClass);
 
-        tabs->setCurrentIndex(0);
+        tabs->setCurrentIndex(1);
 
 
         QMetaObject::connectSlotsByName(osDesignClass);
@@ -178,14 +171,21 @@ public:
         QTableWidgetItem *___qtablewidgetitem3 = tableProcess->horizontalHeaderItem(3);
         ___qtablewidgetitem3->setText(QApplication::translate("osDesignClass", "\347\224\250\346\210\267", 0));
         tabs->setTabText(tabs->indexOf(process), QApplication::translate("osDesignClass", "\350\277\233\347\250\213(&P)", 0));
-        QTableWidgetItem *___qtablewidgetitem4 = tableFile->horizontalHeaderItem(0);
-        ___qtablewidgetitem4->setText(QApplication::translate("osDesignClass", "\345\220\215\347\247\260", 0));
-        QTableWidgetItem *___qtablewidgetitem5 = tableFile->horizontalHeaderItem(1);
-        ___qtablewidgetitem5->setText(QApplication::translate("osDesignClass", "\346\227\245\346\234\237", 0));
-        QTableWidgetItem *___qtablewidgetitem6 = tableFile->horizontalHeaderItem(2);
-        ___qtablewidgetitem6->setText(QApplication::translate("osDesignClass", "\347\224\250\346\210\267", 0));
-        QTableWidgetItem *___qtablewidgetitem7 = tableFile->horizontalHeaderItem(3);
-        ___qtablewidgetitem7->setText(QApplication::translate("osDesignClass", "\346\235\203\351\231\220", 0));
+        QTreeWidgetItem *___qtreewidgetitem = treeFile->headerItem();
+        ___qtreewidgetitem->setText(3, QApplication::translate("osDesignClass", "\346\235\203\351\231\220", 0));
+        ___qtreewidgetitem->setText(2, QApplication::translate("osDesignClass", "\347\224\250\346\210\267", 0));
+        ___qtreewidgetitem->setText(1, QApplication::translate("osDesignClass", "\345\210\233\345\273\272\346\227\245\346\234\237", 0));
+        ___qtreewidgetitem->setText(0, QApplication::translate("osDesignClass", "\346\226\207\344\273\266\345\220\215", 0));
+
+        const bool __sortingEnabled = treeFile->isSortingEnabled();
+        treeFile->setSortingEnabled(false);
+        QTreeWidgetItem *___qtreewidgetitem1 = treeFile->topLevelItem(0);
+        ___qtreewidgetitem1->setText(3, QApplication::translate("osDesignClass", "111111101", 0));
+        ___qtreewidgetitem1->setText(2, QApplication::translate("osDesignClass", "1", 0));
+        ___qtreewidgetitem1->setText(1, QApplication::translate("osDesignClass", "2014-9-5", 0));
+        ___qtreewidgetitem1->setText(0, QApplication::translate("osDesignClass", "test", 0));
+        treeFile->setSortingEnabled(__sortingEnabled);
+
         tabs->setTabText(tabs->indexOf(file), QApplication::translate("osDesignClass", "\346\226\207\344\273\266(&F)", 0));
         LableDeadlock->setText(QApplication::translate("osDesignClass", "\350\277\233\347\250\213\350\265\204\346\272\220\344\275\277\347\224\250\346\203\205\345\206\265\350\276\223\345\207\272\357\274\232", 0));
         tabs->setTabText(tabs->indexOf(deadlock), QApplication::translate("osDesignClass", "\346\255\273\351\224\201\346\250\241\346\213\237(&D)", 0));

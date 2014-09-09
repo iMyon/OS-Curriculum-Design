@@ -1,5 +1,6 @@
 #include "osdesign.h"
 #include <QtWidgets/QApplication>
+#pragma comment(lib, "tinyxml2.lib")
 
 int main(int argc, char *argv[])
 {

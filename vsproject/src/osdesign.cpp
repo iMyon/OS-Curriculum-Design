@@ -3,7 +3,7 @@
 osDesign::osDesign(QWidget *parent)
     : QMainWindow(parent)
 {
-    ui.setupUi(this);
+    setupUi(this);
 }
 
 osDesign::~osDesign()
