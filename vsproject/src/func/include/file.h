@@ -10,6 +10,8 @@
 #pragma once
 #include<string>
 #include<bitset>
+#include "../../tinyxml2/tinyxml2.h"
+using namespace tinyxml2;
 
 using std::string;
 using std::bitset;
@@ -24,20 +26,13 @@ private:
     int owner;              //文件拥有者，userId
     string path;            //文件所在路径
     string filename;        //文件名
-    bitset<3> permission[3];       //文件权限，3个rwx的数组，每组代表owner, group, other
+    bitset<9> permission;       //文件权限，rwx*3, 每组代表owner, group, other
     int type;                   //1：文件， 2:文件夹
     string content;    //文件内容
 
 public:
-    File(int ow, string pt, bitset<3>* pm, int tp, string content)
-        : owner(ow), path(pt), type(tp), content(content)
-    {
-        //初始化权限数组
-        for(int i=0; i<3; i++)
-        {
-            permission[i] = pm[i];
-        }
-    }
+    File(int ow, string pt, bitset<9>* pm, int tp = 1, string content = "");
+    File(XMLElement* xe);
     //get和set函数内联
     int getOwner()
     {
@@ -48,7 +43,7 @@ public:
         return path;
     }
     string getFilename(){ return filename; }
-    bitset<3>* getPermission()
+    bitset<9> getPermission()
     {
         return permission;
     }
@@ -76,13 +71,10 @@ public:
     {
         this->filename = filename;
     }
-    void setPermission(bitset<3>* permission)
+    void setPermission(bitset<9> permission)
     {
-        //初始化权限数组
-        for(int i=0; i<3; i++)
-        {
+        for(int i=0; i<9; i++)
             this->permission[i] = permission[i];
-        }
     }
     void setContent(string content)
     {
